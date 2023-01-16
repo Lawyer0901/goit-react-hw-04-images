@@ -8,7 +8,7 @@ export function ImageGallery({ images, onClick }) {
           key={id}
           id={id}
           webURL={webformatURL}
-          largeURL={largeImageURL}
+          largeImageURL={largeImageURL}
           tags={tags}
           onClick={onClick}
         />
