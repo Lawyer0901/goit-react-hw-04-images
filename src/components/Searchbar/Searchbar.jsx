@@ -20,6 +20,7 @@ export function Searchbar({ onSubmit }) {
     }
     onSubmit(search);
     setSearch('');
+    console.log(search);
   };
 
   return (
