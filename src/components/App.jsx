@@ -6,7 +6,7 @@ import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
 
 export function App() {
-  const [q, setQ] = useState('');
+  const [querry, setQuerry] = useState('');
   const [images, setImages] = useState([]);
   const [status, setStatus] = useState('idle');
   const [page, setPage] = useState(1);
@@ -17,7 +17,7 @@ export function App() {
       return;
     }
     setStatus('pending');
-    fetchImages(page, q)
+    fetchImages(page, querry)
       .then(({ totalHits, hits }) => {
         if (hits.length === 0) {
           throw new Error('We have nothing for this query');
@@ -53,16 +53,16 @@ export function App() {
         setStatus('rejected');
       });
     return;
-  }, [q, page, isFirstLoad]);
+  }, [querry, page, isFirstLoad]);
 
   const handleSubmit = async search => {
-    if (q === search) {
+    if (querry === search) {
       return;
     }
     setIsFirstLoad(false);
     setImages([]);
     setPage(1);
-    setQ(search);
+    setQuerry(search);
   };
 
   const handleLoadMore = () => {

@@ -6,7 +6,7 @@ export function Searchbar({ onSubmit }) {
   const [search, setSearch] = useState('');
 
   const handleInputValue = e => {
-    const { value } = e.currentTarget;
+    const { value } = e.target;
     setSearch(value);
   };
 
@@ -20,7 +20,6 @@ export function Searchbar({ onSubmit }) {
     }
     onSubmit(search);
     setSearch('');
-    console.log(search);
   };
 
   return (
